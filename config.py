@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # reads .env into environment variables
 # gemini-3.8-flash gives a 503 error high demand, try later
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
 
 def setup_lm() -> dspy.LM:
