@@ -1,0 +1,65 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "ticket": "I was charged twice for my annual plan this month. Please fix this today, it's a lot of money.",
+        "category": "billing",
+        "urgency": "high",
+        "reasoning": "**Classifying This Customer Support Ticket**\n\nOkay, let's break this down. This ticket is pretty straightforward, thankfully. The customer's reporting a clear billing issue: they were hit with a double charge for their annual plan this month. The language they use is pretty direct, and they're requesting immediate action - \"Please fix this today, it's a lot of money.\" I need to flag this appropriately.\n\nFirst, the **category:** this is definitively a billing issue, specifically a double charge. No ambiguity there.\n\nSecond, the **urgency:** This is absolutely high-priority. It's a double charge on an annual plan, meaning it’s a significant amount of money at once. The user explicitly wants a fix \"today,\" and mentions it's a \"lot of money,\" highlighting the severity of the issue from their perspective. I need to get this to the right people as soon as possible to minimize impact and dissatisfaction. Let's get this resolved.\n\n\n"
+      },
+      {
+        "augmented": true,
+        "ticket": "The desktop app stopped syncing my notes since yesterday and I have a presentation in an hour!",
+        "category": "technical",
+        "urgency": "high",
+        "reasoning": null
+      },
+      {
+        "augmented": true,
+        "ticket": "How do I change the email address on my account?",
+        "category": "account",
+        "urgency": "low",
+        "reasoning": "**Classifying a Cumulo Customer Support Ticket**\n\nOkay, let's get this ticket sorted. The user is asking \"How do I change the email address on my account?\" That's pretty straightforward, and immediately screams \"account\" as the category. No question about it.\n\nNow for urgency. Is this something that's going to cause them major problems if it's not solved immediately? No, not really. It's a standard support question, and there's no mention of a system outage or any kind of financial impact. Therefore, \"low\" urgency seems entirely appropriate. We don't need to put this in the high-priority queue. So, account category, low urgency – sounds like a done deal.\n\n\n"
+      },
+      {
+        "augmented": true,
+        "ticket": "It would be great if you added a dark mode to the mobile app.",
+        "category": "feature_request",
+        "urgency": "low",
+        "reasoning": null
+      }
+    ],
+    "signature": {
+      "instructions": "Classify a customer support ticket for Cumulo, a cloud note-taking app.",
+      "fields": [
+        {
+          "prefix": "Ticket:",
+          "description": "${ticket}"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "A short plan for solving the task."
+        },
+        {
+          "prefix": "Category:",
+          "description": "${category}"
+        },
+        {
+          "prefix": "Urgency:",
+          "description": "${urgency}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.5.0",
+      "cloudpickle": "3.1"
+    }
+  }
+}

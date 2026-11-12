@@ -1,0 +1,7 @@
+# uv run python optimize.py model changed too because of rate limits
+ 40%|████████████████████████████████████████████████████████████████▊                                                                                                 | 4/10 [00:07<00:10,  1.82s/it]
+Bootstrapped 4 full traces after 4 examples for up to 1 rounds, amounting to 4 attempts.
+Average Metric: 9.50 / 10 (95.0%): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [03:16<00:00, 19.62s/it]
+2026/11/11 23:33:20 INFO dspy.evaluate.evaluate: Average Metric: 9.5 / 10 (95.0%)
+Optimized score: 95.0%
+Saved triage_optimized.json
