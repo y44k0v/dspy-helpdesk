@@ -12,3 +12,9 @@ class Triage(dspy.Signature):
     ticket: str = dspy.InputField()
     category: Category = dspy.OutputField()
     urgency: Urgency = dspy.OutputField()
+    
+class Research(dspy.Signature):
+    """Use the knowledge base to find the facts needed to resolve the ticket."""
+
+    ticket: str = dspy.InputField()
+    facts: str = dspy.OutputField(desc="Relevant facts from the knowledge base, or 'none found'")
