@@ -1,0 +1,6 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+dspy-helpdesk-tutorial-uv.md
+dspy-helpdesk-tutorial.md
