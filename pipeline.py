@@ -34,12 +34,25 @@ class DraftReply(dspy.Signature):
     facts: str = dspy.InputField()
     reply: str = dspy.OutputField()
 
+def reply_reward(args, pred) -> float:
+    """1.0 when the reply follows both style rules, 0.5 for one, 0.0 for none."""
+    reply = pred.reply.strip()
+    short_enough = len(reply.split()) <= 120
+    signed = reply.endswith("Cumulo Support")
+    return (int(short_enough) + int(signed)) / 2
+
 class Helpdesk(dspy.Module):
     def __init__(self):
         super().__init__()
         self.triage = dspy.ChainOfThought(Triage)
         self.research = dspy.ReAct(Research, tools=[search_kb], max_iters=3)
-        self.draft = dspy.ChainOfThought(DraftReply)
+        #self.draft = dspy.ChainOfThought(DraftReply)
+        self.draft = dspy.Refine(
+            module=dspy.ChainOfThought(DraftReply),
+            N=3,
+            reward_fn=reply_reward,
+            threshold=1.0,
+        )
 
     def forward(self, ticket: str):
         t = self.triage(ticket=ticket)
@@ -50,3 +63,9 @@ class Helpdesk(dspy.Module):
         return dspy.Prediction(
             category=t.category, urgency=t.urgency, facts=r.facts, reply=d.reply
         )
+        
+def build_pipeline(triage_path: str = "triage_optimized.json") -> Helpdesk:
+    bot = Helpdesk()
+    if os.path.exists(triage_path):
+        bot.triage.load(triage_path)  # sub-modules can be loaded independently
+    return bot
