@@ -1,0 +1,16 @@
+# uv run python run_eval.py  
+# before optimization
+
+Average Metric: 7.00 / 8 (87.5%):  80%|██████████████████████████████████████████████████████████████████████████████████████████████████████▍                         | 8/10 [01:49<00:19,  9.82s/it]2026/11/11 23:05:47 ERROR dspy.utils.parallelizer: Error for Example({'ticket': 'Where can I find your office address?', 'category': 'other', 'urgency': 'low'}) (input_keys={'ticket'}): [gemini/gemini-2.5-flash] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.
+Please retry in 3h54m12.390918231s.
+
+  To fix:
+    - Wait a moment and retry
+    - Retry with backoff in your application layer (lm15 never retries for you)
+    - Check the reported limits and deployment capacity; a 429 does not prove the endpoint is unsupported
+. Set `provide_traceback=True` for traceback.
+Average Metric: 8.00 / 9 (88.9%): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [05:14<00:00, 31.41s/it]
+2026/11/11 23:06:07 INFO dspy.evaluate.evaluate: Average Metric: 8.0 / 10 (80.0%)
+2026/11/11 23:06:07 WARNING dspy.evaluate.evaluate: Skipping table display since `pandas` is not installed.
+Baseline score: 80.0%
