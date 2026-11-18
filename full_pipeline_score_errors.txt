@@ -1,0 +1,37 @@
+uv run python run_full_eval.py
+  0%|                                                                                                                                                 | 0/5 [00:00<?, ?it/s]2026/11/18 13:18:18 WARNING dspy.predict.predict: Type mismatch for field 'target_threshold': expected float based on given Signature, but the provided value is incompatible: 1.0.
+2026/11/18 13:18:18 WARNING dspy.predict.predict: Type mismatch for field 'reward_value': expected float based on given Signature, but the provided value is incompatible: 0.5.
+2026/11/18 13:18:18 WARNING dspy.predict.predict: Type mismatch for field 'module_names': expected list[str] based on given Signature, but the provided value is incompatible: [
+  "predict"
+].
+Average Metric: 0.67 / 1 (66.7%):  20%|████████████████████▌                                                                                  | 1/5 [00:20<01:20, 20.23s/it]2026/11/18 13:19:39 WARNING dspy.predict.predict: Type mismatch for field 'target_threshold': expected float based on given Signature, but the provided value is incompatible: 1.0.
+2026/11/18 13:19:39 WARNING dspy.predict.predict: Type mismatch for field 'reward_value': expected float based on given Signature, but the provided value is incompatible: 0.5.
+2026/11/18 13:19:39 WARNING dspy.predict.predict: Type mismatch for field 'module_names': expected list[str] based on given Signature, but the provided value is incompatible: [
+  "predict"
+].
+Average Metric: 1.67 / 2 (83.3%):  40%|█████████████████████████████████████████▏                                                             | 2/5 [01:40<02:46, 55.47s/it]2026/11/18 13:19:58 WARNING dspy.predict.predict: Type mismatch for field 'target_threshold': expected float based on given Signature, but the provided value is incompatible: 1.0.
+2026/11/18 13:19:58 WARNING dspy.predict.predict: Type mismatch for field 'reward_value': expected float based on given Signature, but the provided value is incompatible: 0.5.
+2026/11/18 13:19:58 WARNING dspy.predict.predict: Type mismatch for field 'module_names': expected list[str] based on given Signature, but the provided value is incompatible: [
+  "predict"
+].
+Average Metric: 2.67 / 3 (88.9%):  60%|█████████████████████████████████████████████████████████████▊                                         | 3/5 [02:48<02:02, 61.13s/it]2026/11/18 13:24:06 ERROR dspy.utils.parallelizer: Error for Example({'ticket': 'Could you support tags with colors? I organise everything visually.', 'category': 'feature_request', 'urgency': 'low'}) (input_keys={'ticket'}): [gemini/gemini-2.5-flash] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.
+Please retry in 13h35m53.684297321s.
+
+  To fix:
+    - Wait a moment and retry
+    - Retry with backoff in your application layer (lm15 never retries for you)
+    - Check the reported limits and deployment capacity; a 429 does not prove the endpoint is unsupported
+. Set `provide_traceback=True` for traceback.
+Average Metric: 2.67 / 3 (88.9%):  80%|█████████████████████████████████████████████████████████████████████████████████▌                    | 4/5 [05:57<01:51, 111.64s/it]2026/11/18 13:27:13 ERROR dspy.utils.parallelizer: Error for Example({'ticket': 'I want to delete my account and all my data.', 'category': 'account', 'urgency': 'medium'}) (input_keys={'ticket'}): [gemini/gemini-2.5-flash] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.
+Please retry in 13h32m46.408568029s.
+
+  To fix:
+    - Wait a moment and retry
+    - Retry with backoff in your application layer (lm15 never retries for you)
+    - Check the reported limits and deployment capacity; a 429 does not prove the endpoint is unsupported
+. Set `provide_traceback=True` for traceback.
+Average Metric: 2.67 / 3 (88.9%): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [09:04<00:00, 108.92s/it]
+2026/11/18 13:27:13 INFO dspy.evaluate.evaluate: Average Metric: 2.6666666666666665 / 5 (53.3%)
+Full pipeline score: 53.3%
