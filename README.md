@@ -31,3 +31,25 @@ To correct the company name on your invoice, please reply directly to the invoic
 
 Cumulo Support
 ```
+
+#### Flashapi API
+
+```BASH
+# Terminal 1
+$ uv run uvicorn api:app --reload
+INFO:     Will watch for changes in these directories: ['/home/y44k0v/dev/python/DSPy/dspy-helpdesk']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [2995259] using WatchFiles
+INFO:     Started server process [2995261]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:41600 - "POST /triage HTTP/1.1" 200 OK
+
+# Terminal 2
+$ curl -X POST http://localhost:8000/triage \
+  -H "Content-Type: application/json" \
+  -d '{"ticket": "How do I enable two-factor authentication?"}'
+{"category":"account","urgency":"low","facts":"Enable two-factor authentication (2FA) in Settings > Security > Two-factor authentication. Scan the QR code with an authenticator app and save your backup codes.","reply":"Hi there!\n\nTo enable two-factor authentication (2FA), go to Settings > Security > Two-factor authentication. From there, scan the QR code using an authenticator app and make sure to save your backup codes.\n\nBest regards,\nCumulo Support"}
+
+
+```
