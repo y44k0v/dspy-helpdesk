@@ -1,0 +1,8 @@
+services:
+  helpdesk:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env          # injects GEMINI_API_KEY and GEMINI_MODEL at runtime
+    restart: unless-stopped

@@ -1,5 +1,7 @@
 # DSPy Simple helpdesk
-#### Gemini API
+
+## Gemini API
+
 
 A pipeline that takes a raw customer ticket and returns:
 
@@ -16,7 +18,9 @@ A pipeline that takes a raw customer ticket and returns:
 ```
 
 ### Usage 
+
 #### Terminal
+
 ```BASH
 $ uv run python main "My invoice has the wrong company name, I need it fixed for taxes."
 
@@ -59,4 +63,3 @@ Interactive docs are at http://localhost:8000/docs.
 ![request](ui-1.png)
 
 ![response](ui-2.png)
-
