@@ -1,5 +1,5 @@
-# DSPy Simple help desk
-## Gemini API free tier
+# DSPy Simple helpdesk
+#### Gemini API
 
 A pipeline that takes a raw customer ticket and returns:
 
@@ -53,3 +53,10 @@ $ curl -X POST http://localhost:8000/triage \
 
 
 ```
+
+Interactive docs are at http://localhost:8000/docs.
+
+![request](ui-1.png)
+
+![response](ui-2.png)
+
